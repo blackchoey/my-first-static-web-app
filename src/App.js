@@ -1,8 +1,9 @@
 import React from 'react';
 
-function App() {
+async function App() {
   const value = 'World';
-  return <div>Hello {value}</div>;
+  let { text } = await( await fetch(`/api/message`)).json();
+  return <div>{text}</div>;
 }
 
 export default App;
